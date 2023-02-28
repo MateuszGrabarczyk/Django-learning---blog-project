@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/post.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/index.css' %}">
+{% endblock css_files %}
+    
+{% block title %}
+    My blog
+{% endblock title %}
+
+
+{% block content %}
+    
+
+    <section id="welcome">
+        <header>
+            <img src="{% static 'blog/images/max.png' %}" alt="Mati author">
+            <h2>MATI'S BLOG</h2>
+        </header>
+        <p>Hi, I'm Mati and I love to blog about tech and other things</p>
+    </section>
+    <section id="latest-posts">
+        <h2>My latest posts</h2>
+
+        <ul>
+            
+            {% for post in posts %}
+                {% include 'blog/includes/post.html' %}
+            {% endfor %}
+                
+            
+        </ul>
+    </section>
+    <section id="about">
+        <h2>What I do</h2>
+        <p>I love programming and I enjoy hiking in the mountains</p>
+    </section>
+{% endblock content %}
+    
+    
+
